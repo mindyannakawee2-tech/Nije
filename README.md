@@ -18,3 +18,8 @@ object2d = new Object2D(texture, renderer);
 // Audio
 audioName->Play(bool Looped);
 ```
+>QOL
+since there is some memory leaks when you use C++ so I'd recommened doing this instead
+```cpp
+object = std::make_unique<Object2D>(texture, renderer);
+```
