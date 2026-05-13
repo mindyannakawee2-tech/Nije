@@ -21,5 +21,6 @@ audioName->Play(bool Looped);
 >QOL
 since there is some memory leaks when you use C++ so I'd recommened doing this instead
 ```cpp
-object = std::make_unique<Object2D>(texture, renderer);
+texture.reset(Content::Load<Texture2D>("path/to/image", renderer.get()));
+object = std::make_unique<Object2D>(texture.get(), renderer.get());
 ```
