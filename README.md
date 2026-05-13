@@ -1,4 +1,4 @@
-<img src="banner.png" width="200">
+<img src="banner.png" width="1000">
 
 # Nije
 A Powerful Godot-Based Framework for C++
