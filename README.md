@@ -21,8 +21,11 @@ object2d = new Object2D(texture, renderer);
 audioName->Play(bool Looped);
 ```
 >QOL
-since there is some memory leaks when you use C++ so I'd recommened doing this instead
 ```cpp
+// since there is some memory leaks when you use C++ so I'd recommened doing this instead
 texture.reset(Content::Load<Texture2D>("path/to/image", renderer.get()));
 object = std::make_unique<Object2D>(texture.get(), renderer.get());
+// reset object first then texture after
+object.reset();
+texture.reset();
 ```
